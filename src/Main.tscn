@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Characters/Player.tscn" type="PackedScene" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32, 51.5 )
+
+[node name="Main" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+collision_mask = 4
+
+[node name="testwall1" type="StaticBody2D" parent="."]
+collision_layer = 4
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="testwall1"]
+margin_left = 248.0
+margin_top = 5.0
+margin_right = 312.0
+margin_bottom = 108.0
+color = Color( 0.490196, 0.85098, 0.243137, 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="testwall1"]
+position = Vector2( 280, 56.5 )
+shape = SubResource( 1 )
+
+[node name="testwall2" type="StaticBody2D" parent="."]
+position = Vector2( -245, 35 )
+collision_layer = 4
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="testwall2"]
+margin_left = 248.0
+margin_top = 5.0
+margin_right = 312.0
+margin_bottom = 108.0
+color = Color( 0.490196, 0.85098, 0.243137, 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="testwall2"]
+position = Vector2( 280, 56.5 )
+shape = SubResource( 1 )
