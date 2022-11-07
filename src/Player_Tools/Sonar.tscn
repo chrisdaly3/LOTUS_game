@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Imports/Sonar Wave.png" type="Texture" id=1]
-[ext_resource path="res://Player_Tools/Sonar.gd" type="Script" id=2]
+[ext_resource path="res://assets/Imports/Sonar Wave.png" type="Texture" id=1]
+[ext_resource path="res://src/Player_Tools/Sonar.gd" type="Script" id=2]
 
 [node name="Sonar" type="KinematicBody2D"]
 collision_mask = 12
