@@ -3,6 +3,7 @@ extends KinematicBody2D
 var speed = 95
 var velocity = Vector2()
 var sonar = preload("res://src/Player_Tools/Sonar.tscn")
+var screensize = get_viewport_rect().size
 
 func user_input():
 	# accepts user input to move throughout the level

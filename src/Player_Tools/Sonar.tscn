@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/Imports/Sonar Wave.png" type="Texture" id=1]
 [ext_resource path="res://src/Player_Tools/Sonar.gd" type="Script" id=2]
+[ext_resource path="res://assets/Imports/LightTest.png" type="Texture" id=3]
 
 [node name="Sonar" type="KinematicBody2D"]
 collision_mask = 12
@@ -18,5 +19,12 @@ polygon = PoolVector2Array( 13, -10, 13, 10, 9, 13, 2, 13, -11, 3, -11, -3, 2, -
 [node name="SonarTimer" type="Timer" parent="."]
 wait_time = 6.0
 one_shot = true
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( 0, 15 )
+texture = ExtResource( 3 )
+texture_scale = 0.75
+color = Color( 0.227451, 0.894118, 0.270588, 0.776471 )
+energy = 0.56
 
 [connection signal="timeout" from="SonarTimer" to="." method="_on_SonarTimer_timeout"]
