@@ -5,6 +5,7 @@
 [ext_resource path="res://assets/Imports/LightTest.png" type="Texture" id=3]
 
 [node name="Sonar" type="KinematicBody2D"]
+collision_layer = 2
 collision_mask = 12
 script = ExtResource( 2 )
 
@@ -26,5 +27,6 @@ texture = ExtResource( 3 )
 texture_scale = 0.75
 color = Color( 0.227451, 0.894118, 0.270588, 0.776471 )
 energy = 0.56
+shadow_enabled = true
 
 [connection signal="timeout" from="SonarTimer" to="." method="_on_SonarTimer_timeout"]
