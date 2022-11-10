@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/LightTest.png-55bda68294cbf4acaa0a30168919805a.stex"
+path="res://.import/RetryHover.png-367d7dbbedf9987d10bcc5bdca34c7c3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Imports/LightTest.png"
-dest_files=[ "res://.import/LightTest.png-55bda68294cbf4acaa0a30168919805a.stex" ]
+source_file="res://assets/Imports/World/FontsAndButtons/RetryHover.png"
+dest_files=[ "res://.import/RetryHover.png-367d7dbbedf9987d10bcc5bdca34c7c3.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/lightmask.png-7ca44b7c3e68d4031ff17738bb91a5cf.stex"
+path="res://.import/RetryClick.png-db5141c154341296d6946c5b871e4e43.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Imports/lightmask.png"
-dest_files=[ "res://.import/lightmask.png-7ca44b7c3e68d4031ff17738bb91a5cf.stex" ]
+source_file="res://assets/Imports/World/FontsAndButtons/RetryClick.png"
+dest_files=[ "res://.import/RetryClick.png-db5141c154341296d6946c5b871e4e43.stex" ]
 
 [params]
 

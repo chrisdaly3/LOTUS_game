@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Sonar Wave.png-7d3cbe82eb8f74c913a04df444fc093e.stex"
+path="res://.import/DoorLight5.png-c11222138609aa9d82222eb1a2aab672.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Imports/Sonar Wave.png"
-dest_files=[ "res://.import/Sonar Wave.png-7d3cbe82eb8f74c913a04df444fc093e.stex" ]
+source_file="res://assets/Imports/World/WorldAnimations/DoorLight5.png"
+dest_files=[ "res://.import/DoorLight5.png-c11222138609aa9d82222eb1a2aab672.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ur_dead.png-21183adfc29437346b7c8a431a7401b4.stex"
+path="res://.import/RetryDefault.png-f4d3fea5d4c5767f6bfff20931b099a0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Imports/World/ur_dead.png"
-dest_files=[ "res://.import/ur_dead.png-21183adfc29437346b7c8a431a7401b4.stex" ]
+source_file="res://assets/Imports/World/FontsAndButtons/RetryDefault.png"
+dest_files=[ "res://.import/RetryDefault.png-f4d3fea5d4c5767f6bfff20931b099a0.stex" ]
 
 [params]
 

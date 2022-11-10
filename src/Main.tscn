@@ -10,8 +10,8 @@
 script = ExtResource( 5 )
 
 [node name="Floor" type="Sprite" parent="."]
-position = Vector2( 156, 20 )
-scale = Vector2( 4.28125, 3.59375 )
+position = Vector2( 160, 20 )
+scale = Vector2( 4.25, 3.59375 )
 texture = ExtResource( 1 )
 
 [node name="Darkness" type="CanvasModulate" parent="Floor"]
@@ -25,6 +25,5 @@ position = Vector2( 144, 80 )
 [node name="TileMap" parent="." instance=ExtResource( 3 )]
 
 [node name="Enemy" parent="." instance=ExtResource( 4 )]
-position = Vector2( 136, 32 )
 
 [connection signal="died" from="Player" to="." method="_on_Player_died"]

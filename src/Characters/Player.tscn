@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/Imports/players/death.png" type="Texture" id=2]
 [ext_resource path="res://assets/Imports/players/hit2.png" type="Texture" id=3]
 [ext_resource path="res://src/Characters/Player.gd" type="Script" id=4]
-[ext_resource path="res://assets/Imports/LightTest.png" type="Texture" id=5]
+[ext_resource path="res://assets/Imports/World/LightTest.png" type="Texture" id=5]
 [ext_resource path="res://assets/Imports/players/teleport_1/teleport1.png" type="Texture" id=6]
 
 [sub_resource type="AtlasTexture" id=5]
@@ -135,16 +135,17 @@ __meta__ = {
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 zoom = Vector2( 0.75, 0.75 )
+limit_left = -384
+limit_top = -440
+limit_right = 704
+limit_bottom = 480
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 4 )
-animation = "finish"
-frame = 6
-playing = true
+animation = "death"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2( -1, 2 )
 shape = SubResource( 19 )
 
