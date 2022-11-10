@@ -1,4 +1,5 @@
 extends KinematicBody2D
+signal died
 
 var speed = 95
 var velocity = Vector2()
@@ -23,16 +24,28 @@ func user_input():
 	else:
 		$AnimatedSprite.stop()
 
-func _process(delta):
+func _process(_delta):
 	user_shout()
 	$Aimer.rotation = get_angle_to(get_global_mouse_position())
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	user_input()
 	velocity = move_and_slide(velocity)
+	for s in get_slide_count():
+		var coll_info = get_slide_collision(s)
+		if "Enemy" in str(coll_info.collider):
+			player_killed()
 
 func user_shout():
 	if Input.is_action_just_pressed("shout"):
 		var sonar_instance = sonar.instance()
 		sonar_instance.start($Aimer.global_position, $Aimer.rotation)
 		owner.add_child(sonar_instance)
+
+func player_killed():
+	set_physics_process(false)
+	set_process(false)
+	$AnimatedSprite.play("death")
+	yield($AnimatedSprite, "animation_finished")
+	hide()
+	emit_signal("died")
