@@ -1,3 +1,88 @@
-[gd_scene format=2]
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://src/Player_Tools/CountdownDisplay.gd" type="Script" id=1]
+[ext_resource path="res://src/Environment/WorldFont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://src/Player_Tools/SonarCooldown.gd" type="Script" id=3]
+[ext_resource path="res://assets/Imports/World/Sonar Wave.png" type="Texture" id=4]
+
+[sub_resource type="GDScript" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.388235, 0.780392, 0.301961, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color( 0.0823529, 0.0784314, 0.0784314, 0.6 )
+shadow_size = 4
+shadow_offset = Vector2( 2.402, 2.183 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.647059, 0.627451, 0.627451, 0.172549 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [node name="HUD" type="CanvasLayer"]
+script = SubResource( 3 )
+
+[node name="CountdownDisplay" type="Control" parent="."]
+margin_left = 192.0
+margin_top = 8.0
+margin_right = 448.0
+margin_bottom = 64.0
+script = ExtResource( 1 )
+seconds = 10
+
+[node name="Seconds" type="RichTextLabel" parent="CountdownDisplay"]
+margin_left = 72.0
+margin_right = 128.0
+margin_bottom = 28.0
+custom_colors/font_color_shadow = Color( 0.85098, 0.760784, 0.27451, 0.509804 )
+custom_fonts/normal_font = ExtResource( 2 )
+text = "00"
+
+[node name="Deciseconds" type="RichTextLabel" parent="CountdownDisplay"]
+margin_left = 144.0
+margin_right = 192.0
+margin_bottom = 28.0
+custom_colors/font_color_shadow = Color( 0.85098, 0.760784, 0.27451, 0.509804 )
+custom_fonts/normal_font = ExtResource( 2 )
+text = "00"
+
+[node name="GameTimer" type="Timer" parent="CountdownDisplay"]
+process_mode = 0
+wait_time = 0.1
+autostart = true
+
+[node name="SonarCooldown" type="Control" parent="."]
+margin_left = 448.0
+margin_top = 272.0
+margin_right = 640.0
+margin_bottom = 328.0
+script = ExtResource( 3 )
+
+[node name="ProgressBar" type="ProgressBar" parent="SonarCooldown"]
+margin_left = 68.0
+margin_top = 16.0
+margin_right = 188.0
+margin_bottom = 32.0
+custom_styles/fg = SubResource( 1 )
+custom_styles/bg = SubResource( 2 )
+max_value = 5.0
+step = 0.5
+percent_visible = false
+
+[node name="CooldownTimer" type="Timer" parent="SonarCooldown"]
+process_mode = 0
+wait_time = 0.5
+autostart = true
+
+[node name="Sprite" type="Sprite" parent="SonarCooldown"]
+position = Vector2( 48, 24 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 4 )
+
+[connection signal="timeout" from="CountdownDisplay/GameTimer" to="CountdownDisplay" method="_on_GameTimer_timeout"]
+[connection signal="timeout" from="SonarCooldown/CooldownTimer" to="SonarCooldown" method="_on_CooldownTimer_timeout"]

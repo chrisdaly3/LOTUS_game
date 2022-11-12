@@ -24,7 +24,7 @@ func user_input():
 		$AnimatedSprite.stop()
 
 func _process(_delta):
-	user_shout()
+	# user_shout()
 	$Aimer.rotation = get_angle_to(get_global_mouse_position())
 
 func _physics_process(_delta):
@@ -45,6 +45,4 @@ func player_killed():
 	set_physics_process(false)
 	set_process(false)
 	$AnimatedSprite.play("death")
-	yield($AnimatedSprite, "animation_finished")
-	hide()
 	emit_signal("died")
