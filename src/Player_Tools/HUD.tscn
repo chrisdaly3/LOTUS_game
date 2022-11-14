@@ -33,7 +33,7 @@ margin_top = 8.0
 margin_right = 448.0
 margin_bottom = 64.0
 script = ExtResource( 1 )
-seconds = 10
+seconds = 20
 
 [node name="Seconds" type="RichTextLabel" parent="CountdownDisplay"]
 margin_left = 72.0
@@ -72,6 +72,7 @@ custom_styles/fg = SubResource( 1 )
 custom_styles/bg = SubResource( 2 )
 max_value = 5.0
 step = 0.5
+value = 5.0
 percent_visible = false
 
 [node name="CooldownTimer" type="Timer" parent="SonarCooldown"]

@@ -8,8 +8,10 @@ func _on_Timer_timeout():
 
 
 func _on_ExitToMenu_pressed():
-	pass # Replace with function body.
+# warning-ignore:return_value_discarded
+	get_tree().change_scene("res://src/Environment/GameMenu.tscn")
 
 
 func _on_Retry_pressed():
+# warning-ignore:return_value_discarded
 	get_tree().change_scene("res://src/Main.tscn")
