@@ -36,8 +36,8 @@ func _on_CountdownDisplay_time_over():
 
 func _sonar_ready():
 	var cooldown = $HUD/SonarCooldown/ProgressBar
-	if cooldown.value < 5 and Input.is_action_just_pressed("shout"):
+	if cooldown.value < 3 and Input.is_action_just_pressed("shout"):
 		pass
-	if cooldown.value == 5 and Input.is_action_just_pressed("shout"):
+	if cooldown.value == 3 and Input.is_action_just_pressed("shout"):
 		$Player.user_shout()
 		cooldown.value = 0
