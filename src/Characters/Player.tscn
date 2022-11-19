@@ -135,10 +135,6 @@ __meta__ = {
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 zoom = Vector2( 0.75, 0.75 )
-limit_left = -384
-limit_top = -440
-limit_right = 704
-limit_bottom = 480
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.5, 0.5 )
