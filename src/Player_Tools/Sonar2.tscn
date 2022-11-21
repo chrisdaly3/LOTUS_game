@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/Imports/World/sonar_flash_test.png" type="Texture" id=1]
+[ext_resource path="res://src/Player_Tools/Sonar2.gd" type="Script" id=2]
+
+[node name="Sonar2" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Light2D" type="Light2D" parent="."]
+texture = ExtResource( 1 )
+energy = 2.22
+
+[node name="SonarExpand" type="Tween" parent="."]

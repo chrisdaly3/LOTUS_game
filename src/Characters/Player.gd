@@ -3,7 +3,7 @@ signal died
 
 var speed = 95
 var velocity = Vector2()
-var sonar = preload("res://src/Player_Tools/Sonar.tscn")
+var sonar = preload("res://src/Player_Tools/Sonar2.tscn")
 
 func user_input():
 	# accepts user input to move throughout the level
@@ -38,8 +38,9 @@ func _physics_process(_delta):
 func user_shout():
 	if Input.is_action_just_pressed("shout"):
 		var sonar_instance = sonar.instance()
-		sonar_instance.start($Aimer.global_position, $Aimer.rotation)
+		sonar_instance.position = self.global_position
 		owner.add_child(sonar_instance)
+		
 
 func player_killed():
 	set_physics_process(false)
