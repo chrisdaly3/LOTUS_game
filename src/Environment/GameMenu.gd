@@ -10,8 +10,7 @@ func _on_BeginButton_pressed():
 
 
 func _on_TutorialButton_pressed():
-	#get_tree().change_scene()
-	pass
+	get_tree().change_scene("res://src/Environment/Tutorial.tscn")
 
 func _on_ScoresButton_pressed():
 	#get_tree().change_scene()

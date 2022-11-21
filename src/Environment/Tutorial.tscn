@@ -1,0 +1,193 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://assets/Imports/World/256x256/Dirt/Dirt_02-256x256.png" type="Texture" id=1]
+[ext_resource path="res://src/Environment/WorldFont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/Imports/World/FontsAndButtons/Single PNGs/W.png" type="Texture" id=3]
+[ext_resource path="res://assets/Imports/World/FontsAndButtons/Single PNGs/A.png" type="Texture" id=4]
+[ext_resource path="res://assets/Imports/World/FontsAndButtons/Single PNGs/D.png" type="Texture" id=5]
+[ext_resource path="res://assets/Imports/World/FontsAndButtons/left_mouse.png" type="Texture" id=6]
+[ext_resource path="res://assets/Imports/World/FontsAndButtons/Single PNGs/S.png" type="Texture" id=7]
+[ext_resource path="res://assets/Imports/World/FontsAndButtons/Single PNGs/BACKSPACEALTERNATIVE.png" type="Texture" id=8]
+[ext_resource path="res://src/Environment/Tutorial.gd" type="Script" id=9]
+[ext_resource path="res://src/Environment/WorldFont_Small.tres" type="DynamicFont" id=10]
+[ext_resource path="res://assets/Imports/players/Enemy_Sprite.png" type="Texture" id=11]
+[ext_resource path="res://assets/Imports/World/WorldAnimations/DoorLight0.png" type="Texture" id=12]
+[ext_resource path="res://assets/Imports/World/WorldAnimations/DoorLight2.png" type="Texture" id=13]
+[ext_resource path="res://assets/Imports/World/WorldAnimations/DoorLight5.png" type="Texture" id=14]
+[ext_resource path="res://assets/Imports/World/WorldAnimations/DoorLight3.png" type="Texture" id=15]
+[ext_resource path="res://assets/Imports/World/WorldAnimations/DoorLight6.png" type="Texture" id=16]
+[ext_resource path="res://assets/Imports/World/WorldAnimations/DoorLight4.png" type="Texture" id=17]
+[ext_resource path="res://assets/Imports/World/WorldAnimations/DoorLight1.png" type="Texture" id=18]
+[ext_resource path="res://assets/Imports/World/Sonar Wave.png" type="Texture" id=19]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 24, 31 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 31, 24, 31 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 12 ), ExtResource( 18 ), ExtResource( 13 ), ExtResource( 15 ), ExtResource( 17 ), ExtResource( 14 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Tutorial" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 9 )
+
+[node name="Background" type="Sprite" parent="."]
+modulate = Color( 0.0431373, 0.0392157, 0.0392157, 1 )
+position = Vector2( 320, 180 )
+scale = Vector2( 2.5, 1.40625 )
+texture = ExtResource( 1 )
+
+[node name="MovementLabel" type="RichTextLabel" parent="."]
+anchor_left = 0.0375
+anchor_top = 0.6
+anchor_right = 0.2625
+anchor_bottom = 0.577778
+margin_left = 64.0
+margin_top = 24.0
+margin_right = 104.0
+margin_bottom = 64.0
+custom_colors/default_color = Color( 1, 0.788235, 0.054902, 1 )
+custom_fonts/normal_font = ExtResource( 2 )
+text = "MOVEMENT"
+
+[node name="SonarLabel" type="RichTextLabel" parent="."]
+anchor_left = 0.35
+anchor_top = 0.578
+anchor_right = 0.5875
+anchor_bottom = 0.6
+margin_left = 144.0
+margin_top = 23.92
+margin_right = 216.0
+margin_bottom = 48.0
+custom_colors/default_color = Color( 1, 0.788235, 0.054902, 1 )
+custom_fonts/normal_font = ExtResource( 2 )
+text = "USE SONAR"
+
+[node name="BackButton" type="RichTextLabel" parent="."]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 96.0
+margin_bottom = 64.0
+custom_colors/default_color = Color( 1, 0.788235, 0.054902, 1 )
+custom_fonts/normal_font = ExtResource( 10 )
+bbcode_enabled = true
+bbcode_text = "[center]MENU[/center]"
+text = "MENU"
+
+[node name="Sprite" type="Sprite" parent="BackButton"]
+position = Vector2( 48, 32 )
+texture = ExtResource( 8 )
+
+[node name="GridContainer" type="GridContainer" parent="."]
+anchor_bottom = 1.0
+margin_left = 112.0
+margin_top = 264.0
+margin_right = 248.0
+margin_bottom = -8.0
+columns = 3
+
+[node name="W" type="Sprite" parent="GridContainer"]
+position = Vector2( 66, 40 )
+texture = ExtResource( 3 )
+
+[node name="A" type="Sprite" parent="GridContainer"]
+position = Vector2( 42, 62 )
+texture = ExtResource( 4 )
+
+[node name="S" type="Sprite" parent="GridContainer"]
+position = Vector2( 66, 62 )
+texture = ExtResource( 7 )
+
+[node name="D" type="Sprite" parent="GridContainer"]
+position = Vector2( 90, 62 )
+texture = ExtResource( 5 )
+
+[node name="GridContainer2" type="GridContainer" parent="."]
+anchor_bottom = 1.0
+margin_left = 400.0
+margin_top = 264.0
+margin_right = 528.0
+margin_bottom = -8.0
+columns = 3
+
+[node name="Mouse" type="AnimatedSprite" parent="GridContainer2"]
+position = Vector2( 64, 54 )
+scale = Vector2( 1.41667, 1.42742 )
+frames = SubResource( 3 )
+speed_scale = 0.3
+playing = true
+
+[node name="EnemyLabel" type="RichTextLabel" parent="."]
+margin_left = 44.0
+margin_top = 84.0
+margin_right = 236.0
+margin_bottom = 192.0
+custom_colors/default_color = Color( 1, 0.788235, 0.054902, 1 )
+custom_fonts/normal_font = ExtResource( 10 )
+bbcode_enabled = true
+bbcode_text = "[center]AVOID 
+THESE![/center]"
+text = "AVOID 
+THESE!"
+
+[node name="Enemy" type="Sprite" parent="EnemyLabel"]
+position = Vector2( 89, 83 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 11 )
+
+[node name="DoorLabel" type="RichTextLabel" parent="."]
+margin_left = 225.0
+margin_top = 79.0
+margin_right = 416.0
+margin_bottom = 195.0
+custom_colors/default_color = Color( 1, 0.788235, 0.054902, 1 )
+custom_fonts/normal_font = ExtResource( 10 )
+bbcode_enabled = true
+bbcode_text = "[center]FIND
+THIS![/center]"
+text = "FIND
+THIS!"
+
+[node name="Door" type="AnimatedSprite" parent="DoorLabel"]
+position = Vector2( 94, 83 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 4 )
+frame = 5
+speed_scale = 0.5
+playing = true
+
+[node name="AbilityLabel" type="RichTextLabel" parent="."]
+margin_left = 430.0
+margin_top = 78.0
+margin_right = 607.0
+margin_bottom = 194.0
+custom_colors/default_color = Color( 1, 0.788235, 0.054902, 1 )
+custom_fonts/normal_font = ExtResource( 10 )
+bbcode_enabled = true
+bbcode_text = "[center]USING
+THIS![/center]"
+text = "USING
+THIS!"
+
+[node name="Sonar" type="Sprite" parent="AbilityLabel"]
+position = Vector2( 85, 84 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 19 )

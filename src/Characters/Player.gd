@@ -1,7 +1,7 @@
 extends KinematicBody2D
 signal died
 
-var speed = 95
+export var speed = 95
 var velocity = Vector2()
 var sonar = preload("res://src/Player_Tools/Sonar2.tscn")
 
