@@ -23,11 +23,14 @@ func _ready():
 
 func _on_body_entered(body):
 	if "Player" in str(body):
-		print("you won, nice!")
+		HighScore.save_time()
 		body.set_process(false)
 		body.set_physics_process(false)
 		emit_signal("win_con")
 
+# warning-ignore:function_conflicts_variable
+# warning-ignore:unused_argument
+# warning-ignore:function_conflicts_variable
 func redraw(value = null):
 
 	# only do this if we are working in the editor

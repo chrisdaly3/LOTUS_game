@@ -17,6 +17,7 @@ config/icon="res://assets/Imports/World/FontsAndButtons/ur_dead.png"
 [autoload]
 
 Util="*res://Util.gd"
+HighScore="*res://HighScore.gd"
 
 [display]
 

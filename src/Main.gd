@@ -2,6 +2,8 @@ extends Node2D
 var you_died = preload("res://src/Environment/DeathScreen.tscn")
 var enemy = preload("res://src/Characters/Enemy.tscn")
 export(int) var enemies = 0
+var start_time
+var end_time
 
 func _ready():
 # warning-ignore:return_value_discarded
@@ -11,11 +13,10 @@ func _ready():
 # warning-ignore:return_value_discarded
 	$HUD/SonarCooldown.connect("sonar_ready", self, "_sonar_ready")
 	get_player_spawn()
-	# DEBUG PURPOSES -- REMOVE PLAYER PRINT
-	print($Player.position)
 	set_exit()
 	for x in enemies:
 		spawn_enemies()
+	start_time = Time.get_ticks_msec()
 	
 
 func _process(_delta):
@@ -32,6 +33,8 @@ func _on_win_con():
 	var player = $Player/AnimatedSprite
 	var timer = $HUD/CountdownDisplay/GameTimer
 	timer.stop()
+	end_time = Time.get_ticks_msec()
+	HighScore.times_data.time = end_time - start_time
 	player.play("finish")
 
 
@@ -82,8 +85,6 @@ func set_exit():
 		potential_exits[i] = $TileMap.to_global($TileMap.map_to_world(potential_exits[i]))
 	exit_pos = potential_exits[randi() % potential_exits.size()]
 	$TileMap/LevelComplete.position = exit_pos
-	# TEST PRINT -- REMOVE
-	print("The exit position is:", exit_pos)
 
 func spawn_enemies():
 	var ground_tiles = $TileMap.get_used_cells_by_id(0)
