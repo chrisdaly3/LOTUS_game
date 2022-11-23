@@ -35,6 +35,7 @@ func _on_win_con():
 	timer.stop()
 	end_time = Time.get_ticks_msec()
 	HighScore.times_data.time = end_time - start_time
+	HighScore.save_time()
 	player.play("finish")
 
 
