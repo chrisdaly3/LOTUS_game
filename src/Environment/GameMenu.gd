@@ -2,6 +2,7 @@ extends Control
 
 func _ready():
 	$AnimatedSprite.play("TitleScroll")
+	HighScore.load_time()
 
 
 func _on_BeginButton_pressed():

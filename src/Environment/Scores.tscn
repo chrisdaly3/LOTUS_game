@@ -255,7 +255,7 @@ position = Vector2( 320, 64 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 54 )
 animation = "TitleScroll"
-frame = 37
+frame = 8
 playing = true
 
 [node name="Titles" type="HBoxContainer" parent="."]
