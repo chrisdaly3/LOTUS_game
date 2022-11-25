@@ -6,6 +6,7 @@ var start_time
 var end_time
 
 func _ready():
+	AudioPlayer.get_node("Bells").stop(); AudioPlayer.get_node("Soundtrack").play()
 # warning-ignore:return_value_discarded
 	$TileMap.connect("win_con", self, "_on_win_con")
 # warning-ignore:return_value_discarded

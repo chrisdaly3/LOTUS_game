@@ -18,6 +18,7 @@ config/icon="res://assets/Imports/World/FontsAndButtons/ur_dead.png"
 
 Util="*res://Util.gd"
 HighScore="*res://HighScore.gd"
+AudioPlayer="*res://AudioPlayer.tscn"
 
 [display]
 
