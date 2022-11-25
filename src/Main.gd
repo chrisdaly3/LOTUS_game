@@ -34,10 +34,11 @@ func _on_win_con():
 	var timer = $HUD/CountdownDisplay/GameTimer
 	timer.stop()
 	end_time = Time.get_ticks_msec()
-	HighScore.times_data.time = end_time - start_time
+	HighScore.times_data.time = float((end_time - start_time) / 1000.000)
 	HighScore.save_time()
 	player.play("finish")
 	yield($Player/AnimatedSprite, "animation_finished")
+# warning-ignore:return_value_discarded
 	get_tree().change_scene("res://src/Environment/Scores.tscn")
 
 

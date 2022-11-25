@@ -8,7 +8,7 @@ var times_data = {
 	"player": "PLAYER"
 }
 
-# writes the data to local files in JSON format
+# Writes user times to local file for persistent leaderboard.
 func save_time():
 	var save_file = File.new()
 	if save_file.file_exists("user://times.save") and str(player_times[0]) == "{player:PLAYER, time:0}":
@@ -18,12 +18,10 @@ func save_time():
 	save_file.store_var(player_times)
 	save_file.close()
 
-# Checks for the existence of a save file, and creates one if not already created.
-# Loads list of player times for scores page
+# Checks for the existence of a save file, and pulls player scores if it exists.
 func load_time():
 	var save_file = File.new()
 	if not save_file.file_exists("user://times.save"):
-		save_time()
 		return
 	save_file.open("user://times.save", File.READ)
 	player_times = save_file.get_var()
