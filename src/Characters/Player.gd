@@ -43,7 +43,7 @@ func user_shout():
 		
 
 func player_killed():
+	emit_signal("died")
 	set_physics_process(false)
 	set_process(false)
 	$AnimatedSprite.play("death")
-	emit_signal("died")
