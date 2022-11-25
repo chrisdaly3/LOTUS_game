@@ -10,8 +10,10 @@ var times_data = {
 
 # writes the data to local files in JSON format
 func save_time():
-	player_times.append(times_data)
 	var save_file = File.new()
+	if save_file.file_exists("user://times.save") and str(player_times[0]) == "{player:PLAYER, time:0}":
+		player_times.clear()
+	player_times.append(times_data)
 	save_file.open("user://times.save", File.WRITE)
 	save_file.store_var(player_times)
 	save_file.close()

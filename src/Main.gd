@@ -17,7 +17,7 @@ func _ready():
 	for x in enemies:
 		spawn_enemies()
 	start_time = Time.get_ticks_msec()
-	
+
 
 func _process(_delta):
 	_sonar_ready()
