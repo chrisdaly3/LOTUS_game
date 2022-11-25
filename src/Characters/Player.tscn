@@ -161,3 +161,8 @@ texture_scale = 0.75
 color = Color( 0.85098, 0.760784, 0.27451, 1 )
 energy = 1.47
 shadow_enabled = true
+
+[node name="SafetyTime" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true

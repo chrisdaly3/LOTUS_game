@@ -32,7 +32,7 @@ func _physics_process(_delta):
 	velocity = move_and_slide(velocity)
 	for s in get_slide_count():
 		var coll_info = get_slide_collision(s)
-		if "Enemy" in str(coll_info.collider):
+		if "Enemy" in str(coll_info.collider) and $SafetyTime.is_stopped():
 			player_killed()
 
 func user_shout():
