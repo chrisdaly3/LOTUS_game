@@ -68,7 +68,7 @@ func get_player_spawn():
 		var left := Vector2(tiles.x-1, tiles.y)
 		var up := Vector2(tiles.x, tiles.y-1)
 		var right := Vector2(tiles.x+1, tiles.y)
-		if left in ground_tiles and right in ground_tiles and up in ground_tiles and tiles.y <= 8:
+		if left in ground_tiles and right in ground_tiles and up in ground_tiles and tiles.y <= 40:
 			spawn_options.append(tiles)
 	for i in range(spawn_options.size()):
 		spawn_options[i] = $TileMap.to_global($TileMap.map_to_world(spawn_options[i]))
@@ -84,7 +84,7 @@ func set_exit():
 		var left := Vector2(tiles.x-1, tiles.y)
 		var up := Vector2(tiles.x, tiles.y-1)
 		var right := Vector2(tiles.x+1, tiles.y)
-		if left in roof_tiles and right in roof_tiles and up in ground_tiles and tiles.y >= 38:
+		if left in roof_tiles and right in roof_tiles and up in ground_tiles and tiles.y >= 15:
 			potential_exits.append(tiles)
 	for i in range(potential_exits.size()):
 		potential_exits[i] = $TileMap.to_global($TileMap.map_to_world(potential_exits[i]))

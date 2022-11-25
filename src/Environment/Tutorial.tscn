@@ -133,7 +133,6 @@ columns = 3
 position = Vector2( 64, 54 )
 scale = Vector2( 1.41667, 1.42742 )
 frames = SubResource( 3 )
-frame = 1
 speed_scale = 0.3
 playing = true
 
@@ -172,6 +171,7 @@ THIS!"
 position = Vector2( 94, 83 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 4 )
+frame = 2
 speed_scale = 0.5
 playing = true
 
