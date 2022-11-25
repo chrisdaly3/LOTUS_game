@@ -23,7 +23,6 @@ func _ready():
 
 func _on_body_entered(body):
 	if "Player" in str(body):
-		HighScore.save_time()
 		body.set_process(false)
 		body.set_physics_process(false)
 		emit_signal("win_con")

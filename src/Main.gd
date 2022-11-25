@@ -37,6 +37,8 @@ func _on_win_con():
 	HighScore.times_data.time = end_time - start_time
 	HighScore.save_time()
 	player.play("finish")
+	yield($Player/AnimatedSprite, "animation_finished")
+	get_tree().change_scene("res://src/Environment/Scores.tscn")
 
 
 func _on_CountdownDisplay_time_over():
